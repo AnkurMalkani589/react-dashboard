@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tabs, Tab, Box, styled, Typography as MuiTypography } from '@mui/material'; // Use MuiTypography to avoid conflict
+import { Box, styled } from '@mui/material';
 
 const CustomBox = styled('div')({
   border: '1px solid #000',
@@ -7,25 +7,7 @@ const CustomBox = styled('div')({
   backgroundColor: '#363c43',
   flexDirection: 'row',
   height: '40vh',
-  marginBottom: '10px',
-  marginLeft:'10px',
-  marginRight:'10px',
-  marginTop:'10px'
-});
-
-const CustomTabs = styled('Tabs')({
-  display: 'flex',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  backgroundColor: '#000',
-  borderRadius: '20px',
-});
-
-const CustomTab = styled('Tab')({
-  border: '1px solid #fff',
-  margin: '10px',
-  color: '#fff',
-  cursor: 'pointer',
+  margin: '10px'
 });
 
 const NavBar = styled('div')({
@@ -33,17 +15,12 @@ const NavBar = styled('div')({
   justifyContent: 'space-around',
   alignItems: 'center',
   padding: '10px',
-  color: '#fff',
-  marginTop: '20px',
   backgroundColor: '#000',
-  
   color: '#ffffff',
   borderRadius: '20px',
-  padding: '10px 20px',
   fontWeight: 'bold',
   fontSize: '16px',
-  marginLeft:'60px',
-  marginRight:'60px'
+  margin: '20px 60px 0'
 });
 
 const NavItem = styled('div')({
@@ -59,31 +36,23 @@ const CustomText = styled('p')({
   fontSize: '16px',
   color: '#DCDCDC',
   textAlign: 'justify',
-  margin: '55px',
-  marginTop: '20px'
-});
-const NavbarMain = styled('NavBar')({
-
+  margin: '20px 55px 55px'
 });
 
 export default function InfoSection() {
   const [value, setValue] = useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+ 
 
   return (
     <CustomBox className="info-section bg-gray-800 p-4 rounded-lg shadow-lg">
-
       <NavBar>
         <NavItem onClick={() => setValue(0)} className={value === 0 ? 'active' : ''}>About Me</NavItem>
         <NavItem onClick={() => setValue(1)} className={value === 1 ? 'active' : ''}>Experiences</NavItem>
         <NavItem onClick={() => setValue(2)} className={value === 2 ? 'active' : ''}>Recommended</NavItem>
       </NavBar>
 
-
-      <Box className="tab-content mt-4 p-4 bg-gray-700 rounded-lg text-white text-base leading-relaxed">
+      <Box className="tab-content mt-4 p-4 bg-gray-700 rounded-lg text-white text-base m-4 leading-relaxed">
         {value === 0 && (
           <div>
             <CustomText>
